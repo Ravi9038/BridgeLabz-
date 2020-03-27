@@ -1,12 +1,12 @@
 package com.linkedlist;
 
-public class Program4_DeleteNodeAtStart {
-	
+public class Program5_DeleteEnd {
+
 	Node head = null;
 	Node tail = null;
 	
 	class Node{
-	
+		
 		int data;
 		Node next;
 		
@@ -14,11 +14,10 @@ public class Program4_DeleteNodeAtStart {
 			
 			this.data = data;
 			this.next = null;
-
 		}
 	}
 	
-	public void addFirst(int data) {
+	public void AddFirst(int data) {
 		
 		Node newNode = new Node(data);
 		
@@ -26,7 +25,6 @@ public class Program4_DeleteNodeAtStart {
 			
 			head = newNode;
 			tail = newNode;
-			
 		}else {
 			
 			Node temp = head;
@@ -35,33 +33,23 @@ public class Program4_DeleteNodeAtStart {
 		}
 	}
 	
-	public void addLast(int data) {
-		
-		Node newNode = new Node(data);
-		
-		if(head == null) {
-			
-			head = newNode;
-			tail = newNode;
-		}else {
-			
-			tail.next = newNode;
-			tail = newNode;
-		}
-	}
 	
-	public void deleteFirst() {
+	public void deleteEnd() {
 		
 		if(head == null) {
 			System.out.println("List is Empty");
 		}else {
-		
-			//if head is not equal to tail then the head of next is set the head 	
 			
 			if(head != tail) {
 				
-				head = head.next;
-				
+				Node current = head;
+								
+				while (current.next != tail) {
+					
+					current = current.next;
+				}
+				tail = current;
+				tail.next = null;
 			}else {
 				
 				head = tail = null;
@@ -74,11 +62,9 @@ public class Program4_DeleteNodeAtStart {
 		Node current = head;
 		
 		if(head == null) {
-		
 			System.out.println("List is Empty");
 		}else {
-			
-			while(current != null) {
+			while (current != null) {
 				
 				System.out.println(current.data);
 				current = current.next;
@@ -86,33 +72,52 @@ public class Program4_DeleteNodeAtStart {
 		}
 	}
 	public static void main(String[] args) {
-		
-		Program4_DeleteNodeAtStart pr = new Program4_DeleteNodeAtStart();
-		
-		pr.addFirst(10);
-		pr.addLast(30);
-		pr.addFirst(40);
-		pr.addLast(20);
-		pr.deleteFirst();
-		
-		pr.display();
-	}
 
+		Program5_DeleteEnd ll = new Program5_DeleteEnd();
+		
+		ll.AddFirst(10);
+		ll.AddFirst(2);
+		ll.AddFirst(30);
+		ll.AddFirst(40);
+		ll.AddFirst(50);
+		ll.AddFirst(60);
+		ll.AddFirst(70);
+		
+		System.out.println("List Printed");
+		ll.display();
+		
+		ll.deleteEnd();		
+		System.out.println("End is Delete");
+		ll.display();
+		
+		ll.deleteEnd();		
+		System.out.println("End is Delete");
+		ll.display();
+	}
 }
 
 /**
- * 
-before deleting Node
+
+List Printed
+70
+60
+50
 40
-10
 30
-20
-
-After delete 
+2
 10
+End is Delete
+70
+60
+50
+40
 30
-20
+2
+End is Delete
+70
+60
+50
+40
+30
 
-
- * 
- * */
+*/
