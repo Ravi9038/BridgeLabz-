@@ -52,7 +52,7 @@ public class Program2_StackOperations {
 	public void pop() {
 		
 		if(head == null) {
-			System.out.println("Stack is underflow");
+			System.out.println("Stack is underflow ");
 		}else {
 			head = head.next;
 		}
@@ -73,3 +73,14 @@ public class Program2_StackOperations {
 		s.display();
 	}
 }
+
+
+/**.
+ * 
+ * 30
+20
+10
+Pop element
+10
+
+*/
