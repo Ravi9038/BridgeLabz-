@@ -85,7 +85,7 @@ public class Program1_InsertAtSpecificPosition {
 		
 		pi.display();
 		
-		pi.atAtSpecificPosition(4, 40);
+		pi.atAtSpecificPosition(4,40);
 		
 		System.out.println("Display");
 		pi.display();
